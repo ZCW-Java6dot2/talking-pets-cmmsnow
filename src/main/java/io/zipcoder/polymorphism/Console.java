@@ -28,6 +28,8 @@ public class Console {
         for (int i=0; i<numberOfPets; i++){
             type = (getInput("Enter the type of animal for your pet:  ")).toLowerCase();
             name = (getInput("Enter this pet's name:  "));
+            System.out.println(type + " " + name);
+            //^^this right here proves scanner is not saving input!!
             if (type == "dog"){
                 Dog dog = new Dog(name);
                 this.pets.add(dog);
