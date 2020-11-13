@@ -14,8 +14,8 @@ public class Console {
 
     public String getInput(String prompt) {
         System.out.print(prompt);
-        return scan.next();
-        //return scan.nextLine();
+        //scan.next();
+        return scan.nextLine();
     }
 
     public Integer getNumberOfPets(){
