@@ -9,13 +9,12 @@ public class Console {
     private Integer numberOfPets;
     private String type;
     private String name;
-    private ArrayList<Pet> pets = new ArrayList<>();
-    //private Pet[] pets = new Pet[numberOfPets];
+    //private ArrayList<Pet> pets = new ArrayList<Pet>();
 
     public String getInput(String prompt) {
         System.out.print(prompt);
-        scan.next();
-        return scan.nextLine();
+        scan.nextLine();
+        return scan.next();
     }
 
     public Integer getNumberOfPets(){
@@ -24,34 +23,29 @@ public class Console {
         return numberOfPets;
     }
 
-    public void getPets(Integer numberOfPets){
+    public ArrayList<Pet> getPets(Integer numberOfPets){
+        ArrayList<Pet> newPets = new ArrayList<Pet>();
         for (int i=0; i<numberOfPets; i++){
             type = (getInput("Enter the type of animal for your pet:  ")).toLowerCase();
             name = (getInput("Enter this pet's name:  "));
-            System.out.println(type + " " + name);
-            //^^this right here proves scanner is not saving input!!
-            if (type == "dog"){
+            if (type.equals("dog")){
                 Dog dog = new Dog(name);
-                this.pets.add(dog);
-            } else if (type == "cat"){
+                newPets.add(dog);
+            } else if (type.equals("cat")){
                 Cat cat = new Cat(name);
-                this.pets.add(cat);
-            } else if (type == "bunny"){
+                newPets.add(cat);
+            } else if (type.equals("bunny")){
                 Bunny bunny = new Bunny(name);
-                this.pets.add(bunny);
+                newPets.add(bunny);
             }
         }
+        return newPets;
     }
 
-    public void printListOfPets(){
-        System.out.println("List of your " + pets.size() + " pets:\n");
-        for (Pet p : pets){
+    public void printListOfPets(ArrayList<Pet> rPets){
+        System.out.println("List of your " + rPets.size() + " pets:\n");
+        for (Pet p : rPets){
             System.out.println("\n" + (p.getName()) + " says " + (p.speak()));
         }
-
-
-        /*for (int i = 1; i <= pets.size(); i++) {
-            System.out.println("\n" + (pets.indexOf(i)) + " says " + (pet.speak()));
-        }*/
     }
 }

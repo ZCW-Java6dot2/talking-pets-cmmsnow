@@ -6,7 +6,7 @@ public class MainApplication {
     public static void main(String[] args){
         Console console = new Console();
         Integer numOfPets = console.getNumberOfPets();
-        console.getPets(numOfPets);
-        console.printListOfPets();
+        ArrayList<Pet> receivedPets = console.getPets(numOfPets);
+        console.printListOfPets(receivedPets);
     }
 }
