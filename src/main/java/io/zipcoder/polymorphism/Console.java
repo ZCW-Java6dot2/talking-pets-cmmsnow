@@ -14,7 +14,7 @@ public class Console {
 
     public String getInput(String prompt) {
         System.out.print(prompt);
-        //scan.next();
+        scan.next();
         return scan.nextLine();
     }
 
