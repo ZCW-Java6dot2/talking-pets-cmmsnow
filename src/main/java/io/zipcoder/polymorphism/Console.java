@@ -1,6 +1,7 @@
 package io.zipcoder.polymorphism;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Console {
@@ -29,13 +30,13 @@ public class Console {
             name = (getInput("Enter this pet's name:  "));
             if (type == "dog"){
                 Dog dog = new Dog(name);
-                pets.add(dog);
+                this.pets.add(dog);
             } else if (type == "cat"){
                 Cat cat = new Cat(name);
-                pets.add(cat);
+                this.pets.add(cat);
             } else if (type == "bunny"){
                 Bunny bunny = new Bunny(name);
-                pets.add(bunny);
+                this.pets.add(bunny);
             }
         }
     }
