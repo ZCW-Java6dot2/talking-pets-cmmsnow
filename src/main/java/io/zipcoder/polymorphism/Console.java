@@ -25,7 +25,7 @@ public class Console {
     public ArrayList<Pet> getPets(Integer numberOfPets){
         ArrayList<Pet> newPets = new ArrayList<Pet>();
         for (int i=0; i<numberOfPets; i++){
-            type = (getInput("Enter the type of animal for your pet:  ")).toLowerCase();
+            type = (getInput("What type is your pet: dog, cat, or bunny?  ")).toLowerCase();
             name = (getInput("Enter this pet's name:  "));
             if (type.equals("dog")){
                 Dog dog = new Dog(name);
