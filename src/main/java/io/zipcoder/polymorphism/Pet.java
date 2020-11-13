@@ -1,18 +1,13 @@
 package io.zipcoder.polymorphism;
 
+import java.util.ArrayList;
+
 public class Pet {
     String name;
-    String type;
 
     public Pet(){}
 
-    public Pet(String type, String name){
-        this.type = type;
-        this.name = name;
-    }
-
-    public void addPet(String type, String name){
-        this.type = type;
+    public Pet(String name){
         this.name = name;
     }
 
@@ -22,14 +17,6 @@ public class Pet {
 
     public String getName(){
         return this.name;
-    }
-
-    public void setType(String type){
-        this.type = type;
-    }
-
-    public String getType(){
-        return this.type;
     }
 
     public String speak(){

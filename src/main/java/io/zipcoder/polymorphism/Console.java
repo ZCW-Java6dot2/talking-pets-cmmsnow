@@ -6,12 +6,15 @@ import java.util.Scanner;
 public class Console {
     private Scanner scan = new Scanner(System.in);
     private Integer numberOfPets;
-    private String[] typeOfPet;
-    private String[] petsNames;
+    private String type;
+    private String name;
+    private ArrayList<Pet> pets = new ArrayList<>();
+    //private Pet[] pets = new Pet[numberOfPets];
 
     public String getInput(String prompt) {
         System.out.print(prompt);
-        return scan.nextLine();
+        return scan.next();
+        //return scan.nextLine();
     }
 
     public Integer getNumberOfPets(){
@@ -20,36 +23,32 @@ public class Console {
         return numberOfPets;
     }
 
-    public void getTypeOfPets(Integer numberOfPets){
-        if (numberOfPets == 1) {
-            typeOfPet = new String[1];
-            typeOfPet[0] = getInput("Enter the type of animal.");
-        } else if (numberOfPets > 1){
-            typeOfPet = new String[numberOfPets];
-            typeOfPet[0] = getInput("Enter the type of animal for your first pet.");
-            for (int i=1; i<numberOfPets; i++){
-                typeOfPet[i] = getInput("Enter the type of animal for your next pet");
-            }
-        }
-    }
-
-    public void getPetsNames(Integer numberOfPets){
-        if (numberOfPets == 1) {
-            petsNames = new String[1];
-            petsNames[0] = getInput("Enter your pet's name.");
-        } else if (numberOfPets > 1){
-            typeOfPet = new String[numberOfPets];
-            petsNames[0] = getInput("Enter your first pet's name.");
-            for (int i=1; i<numberOfPets; i++){
-                petsNames[i] = getInput("Enter your next pet's name.");
+    public void getPets(Integer numberOfPets){
+        for (int i=0; i<numberOfPets; i++){
+            type = (getInput("Enter the type of animal for your pet:  ")).toLowerCase();
+            name = (getInput("Enter this pet's name:  "));
+            if (type == "dog"){
+                Dog dog = new Dog(name);
+                pets.add(dog);
+            } else if (type == "cat"){
+                Cat cat = new Cat(name);
+                pets.add(cat);
+            } else if (type == "bunny"){
+                Bunny bunny = new Bunny(name);
+                pets.add(bunny);
             }
         }
     }
 
     public void printListOfPets(){
-        System.out.println("List of your " + numberOfPets + " pets:\n");
-        for (int i = 0; i < typeOfPet.length; i++) {
-            System.out.println(petsNames[i] + " is a " + typeOfPet[i] + "\n");
+        System.out.println("List of your " + pets.size() + " pets:\n");
+        for (Pet p : pets){
+            System.out.println("\n" + (p.getName()) + " says " + (p.speak()));
         }
+
+
+        /*for (int i = 1; i <= pets.size(); i++) {
+            System.out.println("\n" + (pets.indexOf(i)) + " says " + (pet.speak()));
+        }*/
     }
 }
