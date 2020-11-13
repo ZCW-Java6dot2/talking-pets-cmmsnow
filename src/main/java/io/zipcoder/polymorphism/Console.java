@@ -9,7 +9,6 @@ public class Console {
     private Integer numberOfPets;
     private String type;
     private String name;
-    //private ArrayList<Pet> pets = new ArrayList<Pet>();
 
     public String getInput(String prompt) {
         System.out.print(prompt);
