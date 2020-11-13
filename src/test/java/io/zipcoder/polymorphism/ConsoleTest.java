@@ -4,11 +4,23 @@ import org.junit.Test;
 
 public class ConsoleTest {
     @Test
-    public void getNumberOfPetsTest(){}
+    public void getNumberOfPetsTest(){
+        //given
+        //when
+        //then
+    }
 
     @Test
-    public void getPetsTest(){}
+    public void getPetsTest(){
+        //given
+        //when
+        //then
+    }
 
     @Test
-    public void printListOfPetsTest(){}
+    public void printListOfPetsTest(){
+        //given
+        //when
+        //then
+    }
 }
